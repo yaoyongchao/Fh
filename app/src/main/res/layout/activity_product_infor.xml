@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lottchina.xdbao.ui.story.ProductInforActivity">
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_version_check"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/version_check"
+        cp:cp_text_tips=""
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_about_us"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/about_us"
+        cp:cp_text_tips=""
+        />
+
+</LinearLayout>

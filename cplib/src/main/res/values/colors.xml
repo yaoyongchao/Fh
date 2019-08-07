@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>-->
+    <color name="blueStartColor">#0C6DFF</color>
+    <color name="blueEndColor">#2CB2FF</color>
+
+    <color name="txtBlue">#187EFC</color>
+    <color name="socket_off">#A9BFD5</color>
+    <color name="socket_on">#2BEC94</color>
+    <color name="black">#ff000000</color>
+
+</resources>

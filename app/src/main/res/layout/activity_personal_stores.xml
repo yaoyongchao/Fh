@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:cp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lottchina.xdbao.ui.story.personalstores.PersonalStoresActivity">
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_phone"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/phone_number"
+        cp:cp_text_tips=""
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_owner_name"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/owner_name1"
+        cp:cp_text_tips=""
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_store_name"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/store_name"
+        cp:cp_text_tips=""
+        cp:show_border_top="true"
+        cp:show_view_top="true"
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_store_address"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/store_address"
+        cp:cp_text_tips=""
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_store_picture"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/store_picture"
+        cp:cp_text_tips="0"
+        cp:right_img_width="93dp"
+        cp:right_img_height="70dp"
+        cp:right_img_drawable="@drawable/img_avatar_default"
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/cv_store_description"
+        style="@style/WidthHeightMW"
+        cp:cp_text="@string/store_description"
+        cp:cp_text_tips=""
+        />
+
+</LinearLayout>

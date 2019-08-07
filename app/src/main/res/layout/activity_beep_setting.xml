@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lottchina.xdbao.ui.story.beep.BeepSettingActivity">
+
+    <com.lottchina.baselib.widget.CpItemCheckBox
+        android:id="@+id/pending_payment"
+        style="@style/WidthHeightMW"
+        cp:ckb_text="@string/pending_payment_program"
+        />
+
+    <com.lottchina.baselib.widget.CpItemCheckBox
+        android:id="@+id/waiting_for_ticket_order"
+        style="@style/WidthHeightMW"
+        cp:ckb_text="@string/waiting_for_ticket_order"
+        />
+
+</LinearLayout>

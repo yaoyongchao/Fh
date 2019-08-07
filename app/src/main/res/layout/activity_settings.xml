@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lottchina.xdbao.ui.story.settings.SettingsActivity">
+
+    <com.lottchina.baselib.widget.CpItemView
+        style="@style/WidthHeightMW"
+        cp:cp_text="每次取票张数"
+        cp:cp_text_tips="1(张)"
+        />
+
+    <com.lottchina.baselib.widget.CpItemCheckBox
+        android:id="@+id/ask_ticket"
+        style="@style/WidthHeightMW"
+        cp:ckb_text="接单后询问出票"
+        />
+    <com.lottchina.baselib.widget.CpItemCheckBox
+        android:id="@+id/ask_photo"
+        style="@style/WidthHeightMW"
+        cp:ckb_text="出票后询问拍照"
+        />
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/printer"
+        style="@style/WidthHeightMW"
+        cp:cp_text="投注单打印机"
+        cp:cp_text_tips=""
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        android:id="@+id/beep"
+        style="@style/WidthHeightMW"
+        cp:cp_text="提示音(自选不同的声音)"
+        cp:cp_text_tips=""
+        />
+
+    <com.lottchina.baselib.widget.CpItemCheckBox
+        android:id="@+id/newbie_prompt"
+        style="@style/WidthHeightMW"
+        cp:ckb_text="新手提示"
+        />
+
+    <com.lottchina.baselib.widget.CpItemCheckBox
+        android:id="@+id/departure_friend"
+        style="@style/WidthHeightMW"
+        cp:ckb_text="显示离店彩友"
+        />
+
+</LinearLayout>

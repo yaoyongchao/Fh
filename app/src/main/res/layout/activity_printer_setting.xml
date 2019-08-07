@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lottchina.xdbao.ui.story.settings.PrinterSettingActivity">
+
+    <com.lottchina.baselib.widget.CpItemView
+        style="@style/WidthHeightMW"
+        cp:cp_text="选择兼容打印机型号"
+        cp:cp_text_tips="@string/other"
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        style="@style/WidthHeightMW"
+        cp:cp_text="调整边距"
+        cp:cp_text_tips="4.0(mm)"
+        />
+
+    <com.lottchina.baselib.widget.CpItemView
+        style="@style/WidthHeightMW"
+        cp:cp_text="WIFI设置"
+        cp:cp_text_tips=""
+        />
+
+</LinearLayout>

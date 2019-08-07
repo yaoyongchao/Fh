@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+  <path
+      android:fillColor="@color/dialog_delete"
+      android:pathData="M823.04,840.32 L524.16,540.16l296.32,-294.4c12.8,-12.8 12.8,-33.28 0,-45.44 -12.8,-12.8 -33.28,-12.8 -46.08,0L478.08,494.08 184.96,200.32c-12.8,-12.8 -33.28,-12.8 -45.44,0s-12.8,33.28 0,45.44l292.48,293.76 -302.72,300.8c-12.8,12.8 -12.8,33.28 0,45.44 12.8,12.8 33.28,12.8 46.08,0l302.72,-300.16 299.52,300.16c12.8,12.8 33.28,12.8 45.44,0C835.2,873.6 835.2,853.12 823.04,840.32z"/>
+</vector>

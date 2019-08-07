@@ -1,0 +1,24 @@
+//ext:添加额外的属性
+//分两个部分来配置：android:目录下的项目的版本、包名、编译版本、等信息
+//dependencies：目录下的android support库 我们自己引用的第三方库
+ext {
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.0'
+    minSdkVersion = 15
+    targetSdkVersion = 28
+    versionCode = 1
+    versionName = '1.0'
+   def supportVersion = '28.0.0'
+
+
+
+    dependencies = [
+            support_v7                        : 'com.android.support:appcompat-v7:28.0.0',
+            support_v4                        : 'com.android.support:support-v4:28.0.0',
+            constraint_layout                 : 'com.android.support.constraint:constraint-layout:1.1.3',
+            recyclerview_v7                   : 'com.android.support:recyclerview-v7:28.0.0',
+            support_design                    : 'com.android.support:design:28.0.0'
+
+    ]
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lottery_friend_sort">
+        <item>默认</item>
+        <item>活跃时间由近到远 </item>
+        <item>活跃时间由远到近</item>
+        <item>到店时间由近到远</item>
+        <item>到店时间由远到近</item>
+        <item>账户余额由多到少</item>
+        <item>账户余额由少到多</item>
+    </string-array>
+
+    <string-array name="lottery_friend_filter">
+        <item>全部</item>
+        <item>到店彩友</item>
+        <item>离店彩友</item>
+        <item>取消关注彩友</item>
+    </string-array>
+
+</resources>
