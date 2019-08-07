@@ -44,5 +44,6 @@ open class BaseApplication: Application() {
 
     open fun initViews() {
         appContext = applicationContext
+
     }
 }

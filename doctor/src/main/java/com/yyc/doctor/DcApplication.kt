@@ -21,7 +21,7 @@ import com.lottchina.baselib.utils.L
  * Description: $description$
  */
 
-class DcApplication : BaseApplication(){
+class DcApplication: BaseApplication() {
 
     override fun onCreate() {
         super.onCreate()
