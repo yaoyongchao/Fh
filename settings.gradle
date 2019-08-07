@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':cplib'
+include ':app', ':baselib', ':cplib', ':doctor'
