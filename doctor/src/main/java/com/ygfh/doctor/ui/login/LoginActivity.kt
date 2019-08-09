@@ -2,11 +2,10 @@ package com.ygfh.doctor.ui.login
 
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.fh.baselib.base.BaseActivity
-import com.tencent.trtc.TRTCCloud
+import com.fh.baselib.utils.L
 import com.fh.cplib.utils.JumpUtil
 import com.fh.cplib.utils.RouteUrl
 import com.ygfh.doctor.R
-import com.ygfh.doctor.av.TRTCCloudListenerImpl
 import kotlinx.android.synthetic.main.activity_login.*
 
 /**
@@ -17,16 +16,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 @Route(path = RouteUrl.login)
 class LoginActivity : BaseActivity() {
-    override fun initData() {
-
-    }
-
-    override fun initListener() {
-    }
-
-    private val REQ_PERMISSION_CODE = 0x1000
-    private lateinit var trtcListener : TRTCCloudListenerImpl
-    private var trtcCloud: TRTCCloud? = null
     override fun layoutId(): Int {
         return R.layout.activity_login
     }
@@ -37,9 +26,19 @@ class LoginActivity : BaseActivity() {
             JumpUtil.jumpActivity(RouteUrl.home)
 
         }
+
+        btn_wx.setOnClickListener {
+            L.d("微信登录")
+
+        }
     }
 
+    override fun initData() {
 
+    }
+
+    override fun initListener() {
+    }
 
 
 }
