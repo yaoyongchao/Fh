@@ -24,7 +24,7 @@ android {
         versionName ver.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-
+        multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -87,6 +87,7 @@ dependencies {
     api 'lib.gorden.rxbus2:rxbus:2.0.1'
     //    图片轮播， 来自：https://github.com/bingoogolapple/BGABanner-Android
     api 'cn.bingoogolapple:bga-banner:2.2.4'
+    api 'com.android.support:multidex:1.0.1'
     implementation project(':cplib')
 }
 repositories {

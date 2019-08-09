@@ -7,7 +7,7 @@
     android:background="@color/transparent"
     android:layout_height="match_parent">
 
-    <com.lottchina.baselib.widget.DYLoadingView
+    <com.fh.baselib.widget.DYLoadingView
         android:id="@+id/dv1"
         android:layout_width="80dp"
         android:layout_height="80dp"

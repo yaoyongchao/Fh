@@ -12,14 +12,16 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.yyc.doctor"
+        applicationId "com.ygfh.doctor"
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86"
+        }
     }
 
     buildTypes {
@@ -49,4 +51,6 @@ dependencies {
     //ARouter
     implementation 'com.alibaba:arouter-api:1.5.0'
     kapt 'com.alibaba:arouter-compiler:1.2.2'
+
+    implementation 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
 }
