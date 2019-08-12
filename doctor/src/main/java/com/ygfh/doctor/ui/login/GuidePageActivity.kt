@@ -54,6 +54,7 @@ class GuidePageActivity : BaseActivity() {
          */
         banner_guide.setEnterSkipViewIdAndDelegate(R.id.btn_guide_enter, R.id.tv_guide_skip, BGABanner.GuideDelegate {
             CommonUtil.saveFirstUse()
+            finish()
             JumpUtil.jumpActivity(RouteUrl.login)
         })
     }

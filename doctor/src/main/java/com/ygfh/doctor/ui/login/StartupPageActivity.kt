@@ -1,5 +1,6 @@
 package com.ygfh.doctor.ui.login
 
+import android.view.KeyEvent
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.fh.baselib.base.BaseActivity
 import com.fh.baselib.utils.rx.RxTimer
@@ -26,8 +27,9 @@ class StartupPageActivity : BaseActivity() {
             JumpUtil.jumpActivity(RouteUrl.guide)
         } else {
             RxTimer().timer(time, RxTimer.RxAction {
-                JumpUtil.jumpActivity(RouteUrl.login)
                 finish()
+                JumpUtil.jumpActivity(RouteUrl.login)
+
             })
         }
 
@@ -43,4 +45,18 @@ class StartupPageActivity : BaseActivity() {
     override fun initListener() {
     }
 
+    /**
+     * 传入Boolean参数：如果是false，在这个Activity是任务的根Activity时，方法才会起效。
+     * 传入true，任务中任意Activity都会起效。
+     * @param keyCode
+     * @param event
+     * @return
+     */
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(true)
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
+    }
 }

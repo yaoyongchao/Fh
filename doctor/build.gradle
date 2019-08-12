@@ -8,15 +8,18 @@ kapt {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
+def appId = "com.vcaidian.customer"
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.ygfh.doctor"
+//        applicationId "com.ygfh.doctordebug"
+        applicationId appId
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        flavorDimensions "1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -24,11 +27,113 @@ android {
         }
     }
 
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+
+    //多包配置
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STOREFILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+
+        debug {
+            storeFile file(RELEASE_STOREFILE1)
+            storePassword RELEASE_STORE_PASSWORD1
+            keyAlias RELEASE_KEY_ALIAS1
+            keyPassword RELEASE_KEY_PASSWORD1
+        }
+    }
+
     buildTypes {
         release {
+            //打开混淆
+            minifyEnabled true
+            // true - 打开资源压缩
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+        }
+
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            debuggable true
         }
+    }
+
+    productFlavors {
+        cprelease {
+            manifestPlaceholders = [str: "releaseStr", package_name: "com.ygfh.doctor"]
+            applicationId "com.ygfh.doctor"
+            resValue "string", "app_name", "大医课堂"
+            resValue "bool", "isrRank", 'true'
+            buildConfigField "Boolean", "isDebug", 'false'
+            buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
+            buildConfigField "String", "HTTP_API", "\"http://testone.xxxx.com/\""
+            manifestPlaceholders = [ENVIRONMENT: "apprelease",
+                                    app_icon   : "@mipmap/ic_launcher"]
+        }
+
+        cpdebug {
+            manifestPlaceholders = [str: "devStr", package_name: appId]
+            applicationId appId
+            resValue "string", "app_name", "大医课堂测试"
+            resValue "bool", "isrRank", 'true'
+            buildConfigField "Boolean", "isDebug", 'true'
+            buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
+            buildConfigField "String", "HTTP_API", "\"http://121.42.197.2\""
+            manifestPlaceholders = [ENVIRONMENT: "appdebug",
+                                    app_icon   : "@mipmap/ic_launcher_debug"]
+        }
+
+    }
+
+    /*applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+
+                // apk_渠道名-版本号-版本名称-编译时间.apk
+                def fileName = "apk_${variant.productFlavors[0].name}-${defaultConfig.versionCode}-${defaultConfig.versionName}-${releaseTime() }.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }*/
+    def orignalFile = "aa"
+    def intoFile = "bb"
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            output ->
+                def outputFile = output.outputFile
+
+                if (outputFile != null && outputFile.name.contains('cprelease')) {
+                    def fileName = "dayi-v${variant.versionName}.apk"
+                    outputFileName = fileName
+                } else if (outputFile != null && outputFile.name.contains('cpdebug')) {
+                    def fileName = "dayi_debug-v${variant.versionName}.apk"
+                    outputFileName = fileName
+
+                }
+//            outputFileName = "${project.name}_${defaultConfig.versionName}_${variant.buildType.name}.apk"
+        }
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 
     compileOptions {

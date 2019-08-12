@@ -3,6 +3,7 @@ package com.ygfh.doctor.utils;
 import android.content.Context;
 
 import com.fh.cplib.common.CommonParam;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.ygfh.doctor.DcApplication;
 
 /**
@@ -24,6 +25,10 @@ public class CommonUtil {
      */
     public static boolean isFirstUse() {
         return SPObjUtil.getInt(getContext(),CommonParam.INSTANCE.getIS_FIRST(),0) == 0 ? true : false;
+    }
+
+    public static void saveIWXAPI(IWXAPI api) {
+
     }
 
 }
