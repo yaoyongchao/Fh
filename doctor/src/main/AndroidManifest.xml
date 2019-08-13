@@ -36,10 +36,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ygfh.doctor.wxapi.WXEntryActivity"
+        <activity android:name="com.vcaidian.customer.wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.Translucent"
+            android:theme="@style/WxTheme"
             android:configChanges="orientation|keyboardHidden|screenSize"
             ></activity>
     </application>

@@ -9,7 +9,10 @@ import com.tencent.mm.opensdk.modelmsg.SendAuth
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import com.ygfh.doctor.BuildConfig
 import com.ygfh.doctor.R
+import gorden.rxbus2.Subscribe
 import kotlinx.android.synthetic.main.activity_login.*
+
+
 
 /**
  * Author: YongChao
@@ -48,12 +51,8 @@ class LoginActivity : BaseActivity() {
      * 微信登录
      */
     private fun loginToWeiXin() {
-        //        IWXAPI mApi = BaseApplication.getInstance().getApi();
         val mApi = WXAPIFactory.createWXAPI(this, BuildConfig.wxAppId, true)
         mApi.registerApp(BuildConfig.wxAppId)
-        L.d("appid:" + BuildConfig.wxAppId)
-//        CommonMethod.setWxApi(mApi)
-
         if (!mApi!!.isWXAppInstalled) {
             toast("您的设备未安装微信客户端")
         } else {
@@ -63,15 +62,19 @@ class LoginActivity : BaseActivity() {
 //            req.state = "wx_login"
             mApi.sendReq(req)
         }
-
-//        if (mApi != null && mApi.isWXAppInstalled) {
-//            val req = SendAuth.Req()
-//            req.scope = "snsapi_userinfo"
-////            req.state = "wechat_sdk_demo_test"
-//            req.state = "wx_login"
-//            mApi.sendReq(req)
-//        } else
-//            Toast.makeText(this, "用户未安装微信", Toast.LENGTH_SHORT).show()
     }
 
+    @Subscribe(code = 1000)
+    fun receive1000(code: Int) {
+        when(code) {
+            10 ->
+                L.i("用户授权成功")
+            20 ->
+                L.i("用户取消")
+            30 ->
+                L.i("用户拒绝")
+            40 ->
+                L.i("其他")
+        }
+    }
 }

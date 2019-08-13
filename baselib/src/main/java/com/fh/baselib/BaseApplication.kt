@@ -1,6 +1,5 @@
 package com.fh.baselib
 
-import android.app.Application
 import android.content.Context
 import android.support.multidex.MultiDexApplication
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
@@ -22,7 +21,7 @@ open class BaseApplication: MultiDexApplication() {
 
     companion object {
         // 单例模式： 双重校验锁式
-        val instance: Application by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+        val instance: BaseApplication by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
             BaseApplication()
         }
 

@@ -22,11 +22,18 @@ import com.fh.baselib.utils.L
  */
 
 class DcApplication: BaseApplication() {
-
+//    public var iwxapi: IWXAPI? = null
     override fun onCreate() {
         super.onCreate()
         L.initLogger(BuildConfig.DEBUG)
         L.d("启动Application")
+    }
+
+    companion object {
+        // 单例模式： 双重校验锁式
+        val instance: DcApplication by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            DcApplication()
+        }
     }
 
     override fun initViews() {
@@ -37,4 +44,5 @@ class DcApplication: BaseApplication() {
         }
         ARouter.init(this)
     }
+
 }
