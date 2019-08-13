@@ -90,7 +90,7 @@ android {
             resValue "bool", "isrRank", 'true'
             buildConfigField "Boolean", "isDebug", 'true'
             buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
-            buildConfigField "String", "HTTP_API", "\"http://121.42.197.2\""
+            buildConfigField "String", "HTTP_API", "\"https://www.easy-mock.com/\""
             manifestPlaceholders = [ENVIRONMENT: "appdebug",
                                     app_icon   : "@mipmap/ic_launcher_debug"]
         }

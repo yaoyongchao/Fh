@@ -22,11 +22,11 @@ class ToastUtil {
         }
 
         fun show(msg:String) {
-            show(BaseApplication.instance.applicationContext,msg)
+            show(BaseApplication.appContext,msg)
         }
 
         fun showLong(msg: String) {
-            showLong(BaseApplication.instance.applicationContext,msg)
+            showLong(BaseApplication.appContext,msg)
         }
     }
 }

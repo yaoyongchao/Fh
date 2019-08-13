@@ -24,7 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".ui.demo.TwoActivity"></activity>
         <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.login.GuidePageActivity" />
         <activity android:name=".ui.login.LoginActivity" />
@@ -36,12 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.vcaidian.customer.wxapi.WXEntryActivity"
+        <activity
+            android:name="com.vcaidian.customer.wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:launchMode="singleTop"
-            android:theme="@style/WxTheme"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            ></activity>
+            android:theme="@style/WxTheme" />
     </application>
 
 </manifest>

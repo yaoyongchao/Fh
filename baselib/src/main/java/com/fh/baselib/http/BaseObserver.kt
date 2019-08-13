@@ -1,8 +1,8 @@
 package com.fh.baselib.http
 
 
-import com.fh.baselib.utils.L
 import com.fh.baselib.http.entity.BaseEntity
+import com.fh.baselib.utils.L
 import io.reactivex.Observer
 import io.reactivex.annotations.NonNull
 import io.reactivex.disposables.Disposable
@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable
 abstract class BaseObserver<T> : Observer<BaseEntity<T>> {
 //    private val mContext: Context
     val  TAG = "BaseObserver"
-    private val SUCCESS_CODE = 0
+    private val SUCCESS_CODE = 200
 
     override fun onSubscribe(@NonNull d: Disposable) {
 
