@@ -14,10 +14,11 @@ import com.ygfh.doctor.net.DcServiceFactory
 class TwoPresenter: TwoContract.TwoPresenter() {
     override fun login() {
         DcServiceFactory.getService().login2()
+//                .delay(5, TimeUnit.SECONDS)
                 .compose(MyRxScheduler.ioMain())
                 .subscribe(object : BaseObserver<Login>(){
                     override fun onSuccess(t: Login?) {
-                        L.e("login:" + t!!)
+                        L.e("login:" + t!! + "-- " + getView())
                         getView()?.loginSuccess()
                     }
                 })

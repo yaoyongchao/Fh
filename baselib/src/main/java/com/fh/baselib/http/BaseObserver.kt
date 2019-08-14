@@ -1,8 +1,11 @@
 package com.fh.baselib.http
 
 
+import com.fh.baselib.BaseApplication
 import com.fh.baselib.http.entity.BaseEntity
 import com.fh.baselib.utils.L
+import com.fh.baselib.utils.NetWorkUtils
+import com.fh.baselib.utils.ToastUtil
 import io.reactivex.Observer
 import io.reactivex.annotations.NonNull
 import io.reactivex.disposables.Disposable
@@ -36,17 +39,21 @@ abstract class BaseObserver<T> : Observer<BaseEntity<T>> {
 
     override fun onError(@NonNull e: Throwable) {
         L.e("TAG--onError--" + e.toString())
+        if (!NetWorkUtils.Companion.isConnectedByState(BaseApplication.appContext)) {
+//            ToastUtil.show("网络异常请检查网络")
+            onFail("网络异常请检查网络")
+        }
 //        ExceptionHandle.handleException(e)
     }
 
     override fun onComplete() {
-//        L.d("TAG--onComplete")
+        L.d("TAG--onComplete")
 
     }
 
     abstract fun onSuccess(t: T?)
 
     open fun onFail(msg: String) {
-//        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show()
+        ToastUtil.show(msg)
     }
 }
