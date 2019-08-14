@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.fh.baselib.mvp.BaseView
-import com.fh.baselib.utils.L
-import com.fh.baselib.utils.CreatUtil
 import com.fh.baselib.base.BaseFragment
+import com.fh.baselib.utils.CreatUtil
+import com.fh.baselib.utils.L
 
-abstract class MvpBaseFragment<V: BaseView,P : BasePresenter<V,*> >: BaseFragment(){
+abstract class MvpBaseFragment<V: BaseView,P : BasePresenter<V> >: BaseFragment(){
     var mPresenter: P? =null//可空类型
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -41,7 +40,7 @@ abstract class MvpBaseFragment<V: BaseView,P : BasePresenter<V,*> >: BaseFragmen
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         mPresenter?.unBindView()
+        super.onDestroy()
     }
 }

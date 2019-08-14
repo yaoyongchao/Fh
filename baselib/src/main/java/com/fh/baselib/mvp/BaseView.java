@@ -20,7 +20,7 @@ public interface BaseView {
 //    void loadDataSuccess(T data);
 
 //    void loadDataFailure(String fail);
-    void loadFailure(String fail);
+//    void loadFailure(String fail);
 //    void loadDataSuccess(Object obj);
 
 

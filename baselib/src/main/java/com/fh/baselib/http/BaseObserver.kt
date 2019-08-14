@@ -40,7 +40,7 @@ abstract class BaseObserver<T> : Observer<BaseEntity<T>> {
     }
 
     override fun onComplete() {
-        L.d("TAG--onComplete")
+//        L.d("TAG--onComplete")
 
     }
 

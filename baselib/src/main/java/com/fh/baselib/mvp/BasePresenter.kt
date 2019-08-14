@@ -1,36 +1,39 @@
 package com.fh.baselib.mvp
 
-import com.fh.baselib.mvp.BaseView
-import com.fh.baselib.mvp.BaseModel
-import com.fh.baselib.utils.CreatUtil
 import java.lang.ref.WeakReference
 
-abstract class BasePresenter<V: BaseView, M: BaseModel> {
-    var view: WeakReference<V>? = null
-    var mModel: M? = null
-    init {
-        mModel = CreatUtil.getT(this,0)
-//        L.e("mModel: $mModel")
-    }
+abstract class BasePresenter<V: BaseView> {
+    private var mView: WeakReference<V>? = null
 
+    /**
+     * 绑定view，一般在初始化中调用该方法
+     */
     fun bindView(view: V) {
-        this.view = WeakReference(view)
+        this.mView = WeakReference(view)
 //        L.e("view: $view" )
     }
 
+    /**
+     * View是否绑定
+     *
+     * @return
+     */
     fun isBind(): Boolean {
-        return view != null && view!!.get() != null
+        return mView != null && mView!!.get() != null
     }
 
+    /**
+     * 解除绑定view，一般在onDestroy中调用
+     */
     fun unBindView() {
         if (isBind()) {
-            view!!.clear()
-            view = null
+            mView!!.clear()
+            mView = null
         }
     }
 
-    fun obtainView(): V? {
-        return if (isBind()) view!!.get() else null
+    fun getView(): V? {
+        return if (isBind()) mView!!.get() else null
     }
 
 }

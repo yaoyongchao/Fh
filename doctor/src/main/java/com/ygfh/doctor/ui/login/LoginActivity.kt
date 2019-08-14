@@ -1,12 +1,12 @@
 package com.ygfh.doctor.ui.login
 
+import android.content.Intent
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.fh.baselib.base.BaseActivity
 import com.fh.baselib.http.BaseObserver
 import com.fh.baselib.http.entity.BaseEntity
 import com.fh.baselib.utils.L
 import com.fh.baselib.utils.rx.MyRxScheduler
-import com.fh.cplib.utils.JumpUtil
 import com.fh.cplib.utils.RouteUrl
 import com.tencent.mm.opensdk.modelmsg.SendAuth
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
@@ -15,6 +15,7 @@ import com.ygfh.doctor.R
 import com.ygfh.doctor.data.bean.Login
 import com.ygfh.doctor.data.bean.RxSchedulers
 import com.ygfh.doctor.net.DcServiceFactory
+import com.ygfh.doctor.ui.demo.TwoActivity
 import gorden.rxbus2.Subscribe
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -35,7 +36,15 @@ class LoginActivity : BaseActivity() {
     override fun initView() {
         // 申请动态权限
         btn.setOnClickListener {
-            JumpUtil.jumpActivity(RouteUrl.home)
+//            JumpUtil.jumpActivity(RouteUrl.home)
+
+
+//            tv.text = "12"
+//            var s:String ?=null
+////            s = "123"
+//            Log.e("aa","s---" + s?.toString())
+
+            startActivity(Intent(this,TwoActivity::class.java))
 
         }
 
